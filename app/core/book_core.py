@@ -11,6 +11,12 @@ from core.broker_core import rabbit_connection
 
 
 async def parse(file: UploadFile) -> list[Book]:
+    """
+    Parse uploaded file content
+
+    :param file:
+    :return: list[Book].
+    """
     result = []
     byte_content = await file.read()
     content = byte_content.decode('utf-8')
